@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        //M
+        let string = 'æ e me akkuratt de æ vil'
+        let vocalCounter = 0
+        //V
+        updateView()
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/ `
+                ${string} <br>
+                <button onclick="countVocal()">Tell Vokaler </button>       
+                <div>
+                    number of vocals: ${vocalCounter}
+                </div>
+            `;
+        }
+        //C
+        function countVocal(){
+            for(let i = 0; i < string.length; i++){
+                let vocal = string[i].toLowerCase();
+                
+                // if (vocal === 'a' || vocal === 'e' || vocal === 'i' || vocal === 'o' || vocal === 'u' || vocal === 'y' ||
+                //     vocal === 'æ' || vocal === 'æ' || vocal === 'ø' || vocal === 'å' ){
+                if (['a', 'e', 'i', 'o', 'u', 'y', 'æ', 'ø', 'å'].includes(vocal)) {
+                    vocalCounter++; 
+                } 
+            }
+            console.log(vocalCounter);
+            updateView()
+        }
+
+    </script>
+</body>
+</html>

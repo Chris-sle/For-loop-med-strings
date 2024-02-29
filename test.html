@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        //M
+        let string = 'æ e me akkuratt de æ vil'
+        let aCounter = 0;
+        let eCounter = 0;
+        let iCounter = 0;
+        let oCounter = 0;
+        let uCounter = 0;
+        let yCounter = 0;
+        let æCounter = 0;
+        let øCounter = 0;
+        let åCounter = 0; 
+        //V
+        updateView()
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/ `
+                ${string} <br>
+                <button onclick="countVocal()">Tell Vokaler</button>       
+                <div>
+                    Antall 'a': ${aCounter};<br>
+                    Antall 'e': ${eCounter};<br>
+                    Antall 'i': ${iCounter};<br>
+                    Antall 'o': ${oCounter};<br>
+                    Antall 'u': ${uCounter};<br>
+                    Antall 'y': ${yCounter};<br>
+                    Antall 'æ': ${æCounter};<br>
+                    Antall 'ø': ${øCounter};<br>
+                    Antall 'å': ${åCounter};<br>
+                </div>
+            `;
+        }
+        //C
+        function countVocal(){
+            for(let i = 0; i < string.length; i++){
+                let vocal = string[i].toLowerCase();
+                
+                switch(vocal) {
+                    case 'a':
+                        aCounter++;
+                        break;
+                    case 'e':
+                        eCounter++;
+                        break;
+                    case 'i':
+                        iCounter++;
+                        break;
+                    case 'o':
+                        oCounter++;
+                        break;
+                    case 'u':
+                        uCounter++;
+                        break;
+                    case 'y':
+                        yCounter;
+                        break;
+                    case 'æ':
+                        æCounter;
+                        break;
+                    case 'ø':
+                        øCounter;
+                        break;
+                    case 'å':
+                        åCounter;
+                        break;
+                }
+            }
+            updateView()
+        }
+
+    </script>
+</body>
+</html>
